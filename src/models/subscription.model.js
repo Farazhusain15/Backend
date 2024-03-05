@@ -5,11 +5,11 @@ const subscriptionSchema= new Schema({
     type: Schema.Types.ObjectId,// one who is subscribing
     ref:"User"
   },
-  chennel:{
+  channel:{
     type: Schema.type.ObjectId,// one to whom 'subscriber' is subscribing
     ref:"User"
   },
   
 },{timestamps: true})
 
-export  const Subscription=mongoose.model("Subcription",subscriptionSchema)
+export  const Subscription=mongoose.model("Subcription",subscriptionSchema);
