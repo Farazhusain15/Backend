@@ -146,8 +146,8 @@ const logoutUser=asyncHandler(async(req,res)=>{
  await User.findByIdAndUpdate(
     req.user._id,
     {
-        $set:{
-            refershToken: undefined
+        $unset:{
+            refershToken: 1 // this remove the field from document
         }
     },
     {
@@ -437,5 +437,6 @@ export {registeUser,
      updateAccountDetails,
      updateUserAvatar,
      updateUserCoverImage,
+     getUserChannelProfile,
      getWatchHistory
 };
